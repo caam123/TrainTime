@@ -30,6 +30,11 @@ $("#submit").on("click", function(){
     console.log(fristTrain);
     console.log(frequency);
 
-
+    dataRef.ref().push({
+        name: name,
+        destination: destination,
+        fristTrain: fristTrain,
+        frequency: frequency
+    });
 
 });
