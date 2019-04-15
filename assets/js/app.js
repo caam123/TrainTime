@@ -34,7 +34,8 @@ $("#submit").on("click", function(){
         name: name,
         destination: destination,
         fristTrain: fristTrain,
-        frequency: frequency
+        frequency: frequency,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
 });
