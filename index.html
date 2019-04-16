@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,84 +20,94 @@
 
 <body>
 <nav>
-    <div class="back-portfolio">
-        <div id="back"><span></span><a href="https://caam123.github.io/Bootstrap-portfolio/portfolio.html"><</a> </span> 
-        </div> 
-    </div> 
-</nav> 
+<div class="back-portfolio">
+<div id="back"><span></span><a href="https://caam123.github.io/Bootstrap-portfolio/portfolio.html">
+<</a> </span> </div> </div> </nav> <div class="container">
 
-<div class="container">
-
-    <div class="row">
-        <div class="main-title col-12">
-            <p>Train Time</p>
-        </div>
+<div class="row">
+    <div class="main-title col-12">
+        <p><i class="fas fa-subway"></i>Train Time</p>
     </div>
+</div>
 
 
-    <div class="row">
-        <div class="containTable col-10 align-self-center">
-            <div class="header-section">
-                <p>Current Train Schedule</p>
-            </div>
-
-            
-            <div class="table col-12">
-                <table class="col-12">
-                    <thead>
-                        <tr>
-                        <th>Train name</th>
-                        <th>Destination</th>
-                        <th>Frequency</th>
-                        <th>Next Arrival</th>
-                        <th>Minutes Away</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+<div class="row">
+    <div class="containTable col-12 align-self-center">
+        <div class="header-section">
+            <p><i class="far fa-clock"></i>Current Train Schedule</p>
+        </div>
+        
+        <div class="table col-12">
+            <table class="col-12">
+                <thead>
+                    <tr>
+                    <th>Train name</th>
+                    <th>Destination</th>
+                    <th>Frequency</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
                         <td>Trenton Express</td>
                         <td>Destination</td>
                         <td>25 min</td>
                         <td>Next Arrival</td>
                         <td>Minutes Away</td>
-                    </tbody>    
-                </table>
+                    </tr>
+                    <tr>
+                        <td>Trenton Express</td>
+                        <td>Destination</td>
+                        <td>25 min</td>
+                        <td>Next Arrival</td>
+                        <td>Minutes Away</td>
+                        </tr>
+                    <tr>
+                        <td>Trenton Express</td>
+                        <td>Destination</td>
+                        <td>25 min</td>
+                        <td>Next Arrival</td>
+                        <td>Minutes Away</td>
+                    </tr>
+                </tbody>    
+            </table>
+
+        </div>
+    </div> <!--Cierra Col-10 que contiene toda la table + header-->
+</div> <!--Cierra ROW-->
+<div class="row">
+        <div class="containTable col-12 align-self-center">
+            <div class="header-section">
+                <p><i class="far fa-plus-square"></i>Add Train</p>
+            </div>
+            
+            <div class="col-12">
+                <form class="form"> 
+                    <div class="flex50">
+                            <label for="name">Train Name</label>
+                            <input id="name" type="text" name="trainName">
+                            <label for="destination">Destination</label>
+                            <input id="destination" type="text" name="destination">
+                    </div>
+                    <div class="flex50">
+                            <label for="firstTrain">First Train (hh:mm - military time)</label>
+                            <input id="time" type="time" name="firstTrain">
+                            <label for="frequency">Frequency</label>
+                            <input id="frequency" type="number" name="frequency">
+                    </div>
+                    <div class="submit">
+                        <input id="submit" type="submit" value="Submit">
+                    </div>
+
+                </form>
+            
             </div>
         </div> <!--Cierra Col-10 que contiene toda la table + header-->
     </div> <!--Cierra ROW-->
 
-    <div class="row">
-        <div class="containTable col-10 align-self-center">
-            <div class="header-section">
-                <p>Add Train</p>
-            </div>
-            <div class="formInput">
-                <form class="flex">
-                    <label class="flexChild" for="trainName">Train Name</label>
-                    <br>
-                    <input type="text" id="trainName">
-                    <br>
-                    <label for="destination">Destination</label>
-                    <br>
-                    <br>
-                    <label for="time">First Train (hh:mmm - military tune)</label>
-                    <br>
-                    <input type="text">
-                    <br>
-                    <label for="frequency">Frequency</label>
-                    <br>
-                    <input type="number" id="frequency">
-                    <br>
-                    <input type="button" value="submit">
-                </form>
-
-            </div>
-    </div>
-
-
-
-
-</div> <!--Cierra container-->
-
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 <script src="assets/js/app.js"></script>
