@@ -19,48 +19,83 @@
 
 <body>
 <nav>
-<div class="back-portfolio">
-<div id="back"><span></span><a href="https://caam123.github.io/Bootstrap-portfolio/portfolio.html">
-<</a> </span> </div> </div> </nav> <div class="container">
+    <div class="back-portfolio">
+        <div id="back"><span></span><a href="https://caam123.github.io/Bootstrap-portfolio/portfolio.html"><</a> </span> 
+        </div> 
+    </div> 
+</nav> 
 
-<div class="row">
-    <div class="main-title col-12">
-        <p>Train Time</p>
+<div class="container">
+
+    <div class="row">
+        <div class="main-title col-12">
+            <p>Train Time</p>
+        </div>
     </div>
-</div>
 
 
-<div class="row">
-    <div class="containTable col-10 align-self-center">
-        <div class="header-section">
-            <p>Current Train Schedule</p>
-        </div>
+    <div class="row">
+        <div class="containTable col-10 align-self-center">
+            <div class="header-section">
+                <p>Current Train Schedule</p>
+            </div>
 
-        
-        <div class="table col-12">
-            <table class="col-12">
-                <thead>
-                    <tr>
-                    <th>Train name</th>
-                    <th>Destination</th>
-                    <th>Frequency</th>
-                    <th>Next Arrival</th>
-                    <th>Minutes Away</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td>Trenton Express</td>
-                    <td>Destination</td>
-                    <td>25 min</td>
-                    <td>Next Arrival</td>
-                    <td>Minutes Away</td>
-                </tbody>    
-            </table>
-        </div>
-    </div> <!--Cierra Col-10 que contiene toda la table + header-->
-</div> <!--Cierra ROW-->
+            
+            <div class="table col-12">
+                <table class="col-12">
+                    <thead>
+                        <tr>
+                        <th>Train name</th>
+                        <th>Destination</th>
+                        <th>Frequency</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>Trenton Express</td>
+                        <td>Destination</td>
+                        <td>25 min</td>
+                        <td>Next Arrival</td>
+                        <td>Minutes Away</td>
+                    </tbody>    
+                </table>
+            </div>
+        </div> <!--Cierra Col-10 que contiene toda la table + header-->
+    </div> <!--Cierra ROW-->
 
-</div>
+    <div class="row">
+        <div class="containTable col-10 align-self-center">
+            <div class="header-section">
+                <p>Add Train</p>
+            </div>
+            <div class="formInput">
+                <form class="flex">
+                    <label class="flexChild" for="trainName">Train Name</label>
+                    <br>
+                    <input type="text" id="trainName">
+                    <br>
+                    <label for="destination">Destination</label>
+                    <br>
+                    <br>
+                    <label for="time">First Train (hh:mmm - military tune)</label>
+                    <br>
+                    <input type="text">
+                    <br>
+                    <label for="frequency">Frequency</label>
+                    <br>
+                    <input type="number" id="frequency">
+                    <br>
+                    <input type="button" value="submit">
+                </form>
+
+            </div>
+    </div>
+
+
+
+
+</div> <!--Cierra container-->
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
