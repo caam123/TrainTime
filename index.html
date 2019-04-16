@@ -38,7 +38,7 @@
         </div>
         
         <div class="table col-12">
-            <table class="col-12">
+            <table id="tableTrain" class="col-12">
                 <thead>
                     <tr>
                     <th>Train name</th>
@@ -49,27 +49,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Trenton Express</td>
-                        <td>Destination</td>
-                        <td>25 min</td>
-                        <td>Next Arrival</td>
-                        <td>Minutes Away</td>
-                    </tr>
-                    <tr>
-                        <td>Trenton Express</td>
-                        <td>Destination</td>
-                        <td>25 min</td>
-                        <td>Next Arrival</td>
-                        <td>Minutes Away</td>
-                        </tr>
-                    <tr>
-                        <td>Trenton Express</td>
-                        <td>Destination</td>
-                        <td>25 min</td>
-                        <td>Next Arrival</td>
-                        <td>Minutes Away</td>
-                    </tr>
+
                 </tbody>    
             </table>
 
@@ -86,18 +66,18 @@
                 <form class="form"> 
                     <div class="flex50">
                             <label for="name">Train Name</label>
-                            <input id="name" type="text" name="trainName">
+                            <input id="name" type="text" name="trainName" required/>
                             <label for="destination">Destination</label>
-                            <input id="destination" type="text" name="destination">
+                            <input id="destination" type="text" name="destination" required/>
                     </div>
                     <div class="flex50">
                             <label for="firstTrain">First Train (hh:mm - military time)</label>
-                            <input id="time" type="time" name="firstTrain">
+                            <input id="time" type="time" name="firstTrain" required/>
                             <label for="frequency">Frequency</label>
-                            <input id="frequency" type="number" name="frequency">
+                            <input id="frequency" type="number" name="frequency" required/>
                     </div>
                     <div class="submit">
-                        <input id="submit" type="submit" value="Submit">
+                        <input id="submit" type="submit" value="Submit" onClick="return checkValue()">
                     </div>
 
                 </form>

@@ -13,29 +13,92 @@
 
 var name = "";
 var destination = "";
-var fristTrain = "";
+var firstTrain = "";
 var frequency = "";
 
+function empty(){
 
+  $("#name").val("");
+  $("#destination").val("");
+  $("#firsTrain").val("");
+  $("#frequency").val("");
+}
+
+function checkValue(){
+  var input = $("#name").val();
+  console.log("input is " + input);
+
+  if (input == ""){
+    alert("Field Required");
+    return false;
+  }
+}
 
 $("#submit").on("click", function(){
     event.preventDefault();
     name = $("#name").val().trim();
     destination = $("#destination").val().trim();
-    fristTrain = $("#time").val();
+    firstTrain = $("#time").val();
     frequency = $("#frequency").val();
 
     console.log(name);
     console.log(destination);
-    console.log(fristTrain);
+    console.log(firstTrain);
     console.log(frequency);
+
 
     dataRef.ref().push({
         name: name,
         destination: destination,
-        fristTrain: fristTrain,
+        firstTrain: firstTrain,
         frequency: frequency,
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
-});
+    
+
+
+    
+
+  });
+
+
+
+
+    //on child_added
+    dataRef.ref().on("child_added", function(snapshot){
+
+      var nameDisplay = $("<td>");
+      nameDisplay.text(snapshot.val().name);
+
+      var destinationDisplay = $("<td>");
+      destinationDisplay.text(snapshot.val().destination);
+
+      var frequencyDisplay = $("<td>");
+      frequencyDisplay.text(snapshot.val().frequency);
+
+      var nextDisplay = $("<td>");
+      nextDisplay.text("next");
+
+
+      var minutesDisplay = $("<td>");
+      minutesDisplay.text("minutesHere");
+
+      var tRowData = $("<tr>");
+      $("#tableTrain").append(tRowData);
+      tRowData.append(nameDisplay);
+      tRowData.append(destinationDisplay);
+      tRowData.append(frequencyDisplay);
+      tRowData.append(nextDisplay);
+      tRowData.append(minutesDisplay);
+
+      
+    }, function(errorObject){
+      console.log("Errors handled:" + errorObject.code);
+      
+    });
+
+    
+
+
+
