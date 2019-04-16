@@ -17,22 +17,9 @@ var firstTrain = "";
 var frequency = "";
 
 function empty(){
-
-  $("#name").val("");
-  $("#destination").val("");
-  $("#firsTrain").val("");
-  $("#frequency").val("");
+$("#formTrain").find("input").not("#submit").val("");
 }
 
-function checkValue(){
-  var input = $("#name").val();
-  console.log("input is " + input);
-
-  if (input == ""){
-    alert("Field Required");
-    return false;
-  }
-}
 
 $("#submit").on("click", function(){
     event.preventDefault();
@@ -55,8 +42,7 @@ $("#submit").on("click", function(){
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
-    
-
+    empty();
 
     
 
