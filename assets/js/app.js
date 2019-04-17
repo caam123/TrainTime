@@ -89,37 +89,6 @@ $("#submit").on("click", function(){
       
     });
 
-        dataRef.ref().on("child_added", function(snapshot){
-
-      var nameDisplay = $("<td>");
-      nameDisplay.text(snapshot.val().name);
-
-      var destinationDisplay = $("<td>");
-      destinationDisplay.text(snapshot.val().destination);
-
-      var frequencyDisplay = $("<td>");
-      frequencyDisplay.text(snapshot.val().frequency + " " + "min");
-
-      var nextArrival = $("<td>");
-      nextArrival.text(snapshot.val().nextArrival);
-
-      var minutesAway= $("<td>");
-      minutesAway.text(snapshot.val().minutesAway + " " + "min");
-
-      var tRowData = $("<tr>");
-      $("#tableTrain").append(tRowData);
-      tRowData.append(nameDisplay);
-      tRowData.append(destinationDisplay);
-      tRowData.append(frequencyDisplay);
-      tRowData.append(nextArrival);
-      tRowData.append(minutesAway);
-
-      
-    }, function(errorObject){
-      console.log("Errors handled:" + errorObject.code);
-      
-    });
-    
     function empty(){
       $("#formTrain").find("input").not("#submit").val("");
       }
