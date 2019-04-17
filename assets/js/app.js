@@ -35,7 +35,7 @@ $("#submit").on("click", function(){
     console.log("Time remainder % ", timeRemainder);
     var minutesAway = frequency - timeRemainder;
     console.log("Minutes away", minutesAway);
-    var nextArrival = moment().add(minutesAway,"minutes").format("hh:mm");
+    var nextArrival = moment().add(minutesAway,"minutes").format("HH:mm");
     console.log("next arrival ", nextArrival);
 
 
