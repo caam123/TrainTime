@@ -25,13 +25,21 @@ $("#submit").on("click", function(){
     event.preventDefault();
     name = $("#name").val().trim();
     destination = $("#destination").val().trim();
-    firstTrain = $("#time").val();
-    frequency = $("#frequency").val();
 
-    console.log(name);
-    console.log(destination);
-    console.log(firstTrain);
-    console.log(frequency);
+    //Time calc 
+    firstTrain = $("#time").val();
+    var firstTrainConverted = moment(firstTrain,"HH:mm").subtract(1, "years");
+    frequency = $("#frequency").val();
+    var currentTime = moment();
+    var gapTime = moment().diff(moment(firstTrainConverted),"minutes");
+    console.log("difference in time:", +""+ gapTime);
+    var timeRemainder = gapTime % frequency;
+    console.log("% ", + timeRemainder);
+    var minutesAway = frequency - timeRemainder;
+    console.log("Minutes away", minutesAway);
+    var nextArrival = moment().add(minutesAway,"minutes").format("hh:mm");
+    console.log("next arrival ", nextArrival);
+
 
 
     dataRef.ref().push({
@@ -39,7 +47,8 @@ $("#submit").on("click", function(){
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
+        nextArrival: nextArrival,
+        minutesAway: minutesAway
     });
 
     empty();
@@ -61,22 +70,21 @@ $("#submit").on("click", function(){
       destinationDisplay.text(snapshot.val().destination);
 
       var frequencyDisplay = $("<td>");
-      frequencyDisplay.text(snapshot.val().frequency);
+      frequencyDisplay.text(snapshot.val().frequency + " " + "min");
 
-      var nextDisplay = $("<td>");
-      nextDisplay.text("next");
+      var nextArrival = $("<td>");
+      nextArrival.text(snapshot.val().nextArrival);
 
-
-      var minutesDisplay = $("<td>");
-      minutesDisplay.text("minutesHere");
+      var minutesAway= $("<td>");
+      minutesAway.text(snapshot.val().minutesAway + " " + "min");
 
       var tRowData = $("<tr>");
       $("#tableTrain").append(tRowData);
       tRowData.append(nameDisplay);
       tRowData.append(destinationDisplay);
       tRowData.append(frequencyDisplay);
-      tRowData.append(nextDisplay);
-      tRowData.append(minutesDisplay);
+      tRowData.append(nextArrival);
+      tRowData.append(minutesAway);
 
       
     }, function(errorObject){
