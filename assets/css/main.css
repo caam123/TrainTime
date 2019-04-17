@@ -101,10 +101,15 @@ i{
     font-weight: 100;
 }
 
+table td{
+    text-align: center;
+}
+
 .table thead th{
     border:none;
     font-weight: normal;
     color:var(--white);
+    text-align: center;
 }
 
 .table thead{
