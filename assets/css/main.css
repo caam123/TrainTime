@@ -179,10 +179,31 @@ table td{
 }
 
 @media screen and (max-width:768px){
+
+    body{
+        width:100%;
+    }
+
+    .container{
+        width:95vw;
+        font-size: 0.80em;
+        margin: 0 auto;
+    }
+
+    .containTable {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .main-title{
+        font-size: 1.2em;
+    }
+
     .flex50{
         flex: 0 1 auto;
         width: 100%;
         flex-flow:  row;
         float:left;
     }
+    
 }
